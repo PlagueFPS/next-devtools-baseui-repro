@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-devtools-baseui-repro
 
-## Getting Started
+This is a minimal reproduction of an issue with Next.js dev tools underlying component library `base-ui` and their `detectBrowser.js` file that runs some platform-specific logic.
 
-First, run the development server:
+On Windows machines, this issue causes the error `[TypeError: Cannot read properties of undefined (reading 'includes')]`.
 
+## Reproduction
+
+1. Clone this repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/PlagueFPS/next-devtools-baseui-repro.git
+cd next-devtools-baseui-repro
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Install dependencies
+```bash
+pnpm install
+```
+3. Run development server
+```bash
+pnpm dev
+```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
